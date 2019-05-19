@@ -18,13 +18,12 @@ package com.zp.SwordToOffer2;
 public class SwordToOffer2 {
     public static void main(String[] args) {
         int array[][] = {
-                {1,   4,  7, 11, 15},
-                {2,   5,  8, 12, 19},
-                {3,   6,  9, 16, 22},
-                {10, 13, 14, 17, 24},
-                {18, 21, 23, 26, 30}
+                {1,   2,  8,  9},
+                {2,   4,  9, 12},
+                {4,   7, 10, 13},
+                {6,   8, 11, 15}
         };
-        int target = 5;
+        int target = 7;
         Boolean aBoolean = FindTargetNum(array,target);
         System.out.println(aBoolean);
     }
@@ -33,7 +32,7 @@ public class SwordToOffer2 {
         if(array == null || array.length == 0 || array[0].length == 0)
             return false;
         int lenX = array[0].length-1, lenY = 0;
-        while (lenX < array[0].length && lenY < array.length){
+        while (lenX < array[0].length && lenY < array.length && lenX >=0 && lenY >= 0){
             if(target == array[lenY][lenX]){
                 return true;
             } else if(target > array[lenY][lenX]){
